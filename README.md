@@ -210,8 +210,6 @@ long aprobados = notas.stream()
 aprobados = len(list(filter(lambda n: n >= 7, notas)))
 # 4
 
-# Alternativa común:
-aprobados = sum(1 for n in notas if n >= 7)
 ```
 
 En Scala, `count` recibe directamente la condición. En Java y Python se combina `filter` con el conteo, porque `count()` de Streams y `len()` no reciben condición.
@@ -292,8 +290,7 @@ notas.indexWhere(n => n > 10)   // -1
 notas.grouped(2).toList
 // List(List(8.5, 9.0), List(6.0, 7.5), List(10.0))
 
-// Encadenado con map: promedio de cada bloque
-notas.grouped(2).map(g => g.sum / g.size).toList
+
 // List(8.75, 6.75, 10.0)
 ```
 
